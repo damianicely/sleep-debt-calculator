@@ -25,26 +25,24 @@ const getSleepHours = day => {
     }
 }
 
-// return total number of hours slept inthe week
+// return total number of hours slept in the week
 const getActualSleepHours = () => // implicit return, no curly braces. if you put them back you get undefined
-    getSleepHours('monday') +
+/*    getSleepHours('monday') +
     getSleepHours('tuesday') +
     getSleepHours('wednesday') +
     getSleepHours('thursday') +
     getSleepHours('friday') +
     getSleepHours('saturday') +
-    getSleepHours('sunday'); 
-
+    getSleepHours('sunday'); */
+    7+7+7+7+7+7+7;
 // calculate the ideal number of hours
-const getIdealSleepHours = () => {
-    let idealHours = 8;
-    return idealHours *= 7;
-}
+const getIdealSleepHours = (hours) => 
+    hours *= 7;
 
 //calculate the sleep debt
 const calculateSleepDebt = () => {
     let actualSleepHours = getActualSleepHours();
-    let idealSleepHours = getIdealSleepHours();
+    let idealSleepHours = getIdealSleepHours(9);
     let sleepDebt = Math.abs(idealSleepHours - actualSleepHours);
     if (actualSleepHours === idealSleepHours) {
         console.log('You got just the right amount of sleep.');
